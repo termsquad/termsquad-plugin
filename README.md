@@ -48,7 +48,7 @@ Then use `/mcp` to authenticate. For Cursor, merge into `.cursor/mcp.json`:
 ```
 
 Connect from Cursor's MCP settings. The browser sign-in uses TermSquad, followed
-by the same **Connect to TermSquad** screen for every client. Read access is
+by a dedicated **Connect to TermSquad** page for every client. Read access is
 selected by default; choose the computer/workspaces and expand **Access permissions**
 to allow execution or changes. Each client has a separate revocable connection,
 not a different authentication system. Never paste a TermSquad
@@ -60,6 +60,10 @@ poll it with `agent_wait` every five seconds. Polling keeps the authorization
 lease alive. Cancel with `agent_stop`. A disconnected client loses the lease
 and its temporary resources are cleaned up. Results expire and are not history.
 Persistent agents and existing scheduled tasks use their separate tools.
+
+Keep the client waiting while completing browser consent. If localhost reports
+`ERR_CONNECTION_REFUSED`, its callback listener has stopped: start Connect again
+in that client. An expired or already used authorization request cannot be reused.
 
 Edit permissions or revoke access in **Settings → Integrations → MCP**.
 Write scopes require explicit consent. File operations are bounded and use
