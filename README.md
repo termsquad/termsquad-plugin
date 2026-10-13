@@ -7,8 +7,30 @@ account and an ACTIVE computer are required; the SaaS subscription is separate.
 All clients use one OAuth-protected Streamable HTTP server:
 `https://mcp.termsquad.com/mcp`.
 
-**Release status:** package under validation. Clean local plugin installs passed in Codex and Claude Code; canonical portable JSON schemas and Claude manifests passed validation. The production endpoint and native OAuth in Codex, Claude Code and Cursor have passed, together with scoped reads, refresh rotation and revocation. Runtime listener activation, full write/execute acceptance, Cursor desktop plugin installation, public repository publication and official listings remain pending. Do not interpret these instructions as an
+**Release status:** package under validation. Clean local plugin installs passed in Codex and Claude Code; canonical portable JSON schemas and Claude manifests passed validation. The production endpoint and native OAuth in Codex, Claude Code and Cursor have passed, together with scoped reads, refresh rotation and revocation. Runtime listener activation, full write/execute acceptance, Cursor desktop plugin installation and official listings remain pending. Do not interpret these instructions as an
 approved marketplace listing.
+
+## Install from GitHub
+
+The public package is [termsquad/termsquad-plugin](https://github.com/termsquad/termsquad-plugin).
+Install its own marketplace in Codex:
+
+```bash
+codex plugin marketplace add termsquad/termsquad-plugin
+codex plugin add termsquad@termsquad
+codex plugin list
+```
+
+In Claude Code:
+
+```bash
+claude plugin marketplace add termsquad/termsquad-plugin
+claude plugin install termsquad@termsquad
+claude plugin list
+```
+
+Connect through the client's MCP settings to complete OAuth. These are TermSquad's
+own marketplace entries; official curated listings require separate review.
 
 ## Local plugin installation
 
@@ -76,8 +98,8 @@ TermSquad does not locate or guarantee that history.
 
 ## Publication
 
-Publish only this integration directory to `termsquad/termsquad-plugin` after
-validating the live endpoint and all three clients. The public package contains
+Only this integration directory is published to `termsquad/termsquad-plugin`.
+Complete the remaining live acceptance checks before official submission. The public package contains
 no backend, runtime binary, orchestration policy, npm wrapper or STDIO server.
 The own marketplaces above are separate from official listings.
 
