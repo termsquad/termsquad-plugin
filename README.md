@@ -7,7 +7,7 @@ account and an ACTIVE computer are required; the SaaS subscription is separate.
 All clients use one OAuth-protected Streamable HTTP server:
 `https://mcp.termsquad.com/mcp`.
 
-**Release status:** package under validation. Clean local plugin installs passed in Codex and Claude Code; canonical portable JSON schemas and Claude manifests passed validation. The production endpoint and real Codex OAuth, scoped read, refresh rotation and revocation have passed. Runtime activation, clean OAuth installs in Claude and Cursor, public repository publication and official listings remain pending. Do not interpret these instructions as an
+**Release status:** package under validation. Clean local plugin installs passed in Codex and Claude Code; canonical portable JSON schemas and Claude manifests passed validation. The production endpoint and native OAuth in Codex, Claude Code and Cursor have passed, together with scoped reads, refresh rotation and revocation. Runtime listener activation, full write/execute acceptance, Cursor desktop plugin installation, public repository publication and official listings remain pending. Do not interpret these instructions as an
 approved marketplace listing.
 
 ## Local plugin installation
