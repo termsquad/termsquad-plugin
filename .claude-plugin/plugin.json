@@ -1,0 +1,18 @@
+{
+  "name": "termsquad",
+  "version": "1.0.0",
+  "description": "Manage your TermSquad computers, agents and workspaces from your AI assistant. Requires a separate TermSquad subscription.",
+  "author": {
+    "name": "TermSquad",
+    "url": "https://termsquad.com"
+  },
+  "homepage": "https://termsquad.com",
+  "repository": "https://github.com/termsquad/termsquad-plugin",
+  "license": "MIT",
+  "keywords": [
+    "termsquad",
+    "remote",
+    "agents",
+    "workspaces"
+  ]
+}
