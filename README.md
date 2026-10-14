@@ -7,7 +7,7 @@ account and an ACTIVE computer are required; the SaaS subscription is separate.
 All clients use one OAuth-protected Streamable HTTP server:
 `https://mcp.termsquad.com/mcp`.
 
-**Release status:** package under validation. Clean local plugin installs passed in Codex and Claude Code; canonical portable JSON schemas and Claude manifests passed validation. The production endpoint and native OAuth in Codex, Claude Code and Cursor have passed, together with scoped reads, refresh rotation and revocation. Production one-shots and file mutations have passed. The native approval listener is active: a real SDK client passed human allow-once and a separate client-timeout cancellation, with owned cleanup. A Squad lead task also completed. Full Squad/debate and Schedule completion, proprietary-client elicitation UI coverage, Cursor desktop plugin installation and official listings remain pending. Do not interpret these instructions as an
+**Release status:** package under validation. Clean local plugin installs passed in Codex and Claude Code; canonical portable JSON schemas and Claude manifests passed validation. The production endpoint and native OAuth in Codex, Claude Code and Cursor have passed, together with scoped reads, refresh rotation and revocation. Production one-shots and file mutations have passed. The native approval listener is active: a real SDK client passed human allow-once and a separate client-timeout cancellation, with owned cleanup. A Squad lead task also completed. Individual production YOLO Schedule runs with Codex, Claude and Cursor completed with owned cleanup. Full Squad/debate, production YOLO one-shots on the new listener, proprietary-client elicitation UI coverage, Cursor desktop plugin installation and official listings remain pending. Do not interpret these instructions as an
 approved marketplace listing.
 
 ## Install from GitHub
@@ -156,5 +156,14 @@ the returned interval; expired authorization closes their owned resources.
 YOLO uses verified capabilities of the installed native harness; an unsupported
 CLI fails explicitly. Manual Schedule runs use YOLO for that execution only;
 saved recurring task settings remain unchanged. Provider login/trust still
-belongs to the native harness. Production YOLO acceptance is pending the Runtime
-listener update; this section documents the prepared integration.
+belongs to the native harness. Production YOLO file/task deletion and individual
+Schedule runs passed with Codex, Claude and Cursor; the dedicated test connection
+was then revoked and its access/refresh tokens were rejected. Earlier failed
+Claude report attempts were not counted as success.
+
+YOLO agent launch requires the `2026.10.14.4` session listener. Updating the
+independent controller alone preserves the old listener and active sessions.
+Use the new bootstrap on an isolated VM, or adopt it during a user-planned safe
+restart. Complete production YOLO one-shot/Squad acceptance remains pending that
+listener update. The published `v1.2.0` ZIP remains immutable; these later
+acceptance notes describe current repository validation.
