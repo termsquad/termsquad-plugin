@@ -117,7 +117,7 @@ Official format references, checked 2026-10-13:
 [MCP authorization](https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization).
 
 Some mutations return `human_approval_required`: file/task deletion and sensitive
-Skills changes must be approved by you in TermSquad. Open the returned link,
+Skills changes must be approved by you in TermSquad in normal mode. Open the returned link,
 review the client and exact request, including its computer, workspace and target, then let the client resubmit the
 identical request and action ID. Approval expires after ten minutes and cannot
 be reused for changed arguments.
@@ -136,9 +136,25 @@ The remote harness adapter currently covers Codex shell/patch exceptions. It doe
 not provide native Claude/Cursor approval adapters; those products may separately
 act as MCP clients. Unsupported clients report `elicitation_not_supported`.
 Cancellation, expiry and revocation cannot approve an action. File/task deletions
-and sensitive Skills changes retain their authenticated TermSquad approval page.
+and sensitive Skills changes retain their authenticated TermSquad approval page in normal mode.
 
 The bridge is deployed and the production SDK checks above passed. This
 repository remains a prerelease: those checks do not certify marketplace
 acceptance or the elicitation UI of every proprietary client.
 The server contract contains the original 23 tools plus this additional tool.
+
+
+## Optional YOLO mode
+
+In the connection screen or **Settings → Integrations → MCP → Edit permissions**,
+the user can enable **YOLO · Automatically approve all actions**. It is off by
+default and includes agent approvals, deletions and sensitive MCP changes.
+Permissions, workspace selection, revision checks and revocation still apply.
+A client cannot enable it through a tool argument. Keep polling YOLO agents at
+the returned interval; expired authorization closes their owned resources.
+
+YOLO uses verified capabilities of the installed native harness; an unsupported
+CLI fails explicitly. Manual Schedule runs use YOLO for that execution only;
+saved recurring task settings remain unchanged. Provider login/trust still
+belongs to the native harness. Production YOLO acceptance is pending the Runtime
+listener update; this section documents the prepared integration.
