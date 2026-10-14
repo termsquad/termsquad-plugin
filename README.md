@@ -7,7 +7,7 @@ account and an ACTIVE computer are required; the SaaS subscription is separate.
 All clients use one OAuth-protected Streamable HTTP server:
 `https://mcp.termsquad.com/mcp`.
 
-**Release status:** package under validation. Clean local plugin installs passed in Codex and Claude Code; canonical portable JSON schemas and Claude manifests passed validation. The production endpoint and native OAuth in Codex, Claude Code and Cursor have passed, together with scoped reads, refresh rotation and revocation. Runtime listener activation, full write/execute acceptance, Cursor desktop plugin installation and official listings remain pending. Do not interpret these instructions as an
+**Release status:** package under validation. Clean local plugin installs passed in Codex and Claude Code; canonical portable JSON schemas and Claude manifests passed validation. The production endpoint and native OAuth in Codex, Claude Code and Cursor have passed, together with scoped reads, refresh rotation and revocation. Production one-shots and file mutations have passed. The additional native approval listener, full Squad/Schedule acceptance, Cursor desktop plugin installation and official listings remain pending. Do not interpret these instructions as an
 approved marketplace listing.
 
 ## Install from GitHub
@@ -121,3 +121,23 @@ Skills changes must be approved by you in TermSquad. Open the returned link,
 review the client and exact request, including its computer, workspace and target, then let the client resubmit the
 identical request and action ID. Approval expires after ten minutes and cannot
 be reused for changed arguments.
+
+
+## Review native exceptions in your MCP client
+
+When a remote Codex agent needs a permission exception, `agent_approval` opens a
+human form in your connected MCP client. Review the exact command and destination
+and choose deny or allow once. The tool cannot accept a model-provided decision.
+The connection needs `agents:read` and `agents:manage` for that destination.
+
+This requires a TermSquad Runtime with the native approval bridge, managed Codex
+0.162.1 or newer with hooks enabled, and a client supporting MCP form elicitation.
+The remote harness adapter currently covers Codex shell/patch exceptions. It does
+not provide native Claude/Cursor approval adapters; those products may separately
+act as MCP clients. Unsupported clients report `elicitation_not_supported`.
+Cancellation, expiry and revocation cannot approve an action. File/task deletions
+and sensitive Skills changes retain their authenticated TermSquad approval page.
+
+The bridge is being validated before production release; this repository's
+prerelease status does not certify marketplace acceptance or live client coverage.
+The server contract contains the original 23 tools plus this additional tool.

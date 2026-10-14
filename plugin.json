@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "termsquad",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Manage your TermSquad computers, agents and workspaces from your AI assistant. Requires a separate TermSquad subscription.",
   "author": {
     "name": "TermSquad",
