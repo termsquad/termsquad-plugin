@@ -138,6 +138,17 @@ act as MCP clients. Unsupported clients report `elicitation_not_supported`.
 Cancellation, expiry and revocation cannot approve an action. File/task deletions
 and sensitive Skills changes retain their authenticated TermSquad approval page in normal mode.
 
+## Answer agent questions
+
+When an agent started by your connection waits for input (for example a Claude
+Code multiple-choice question), TermSquad sends `agent.needs_input` to the
+connection's agent event webhook. `agent_input` answers it one step at a time
+with allowlisted keys (`1`-`9`, arrows, `tab`, `enter`, `esc`, `y`, `n`, …) or
+literal text, returning the screen after each step. It requires `agents:execute`
+and a TermSquad Runtime with `agent_input`. On a normal-mode connection, a
+blocked Claude or Cursor agent may be showing its own permission dialog;
+answering it through `agent_input` grants that permission.
+
 The bridge is deployed and the production SDK checks above passed. This
 repository remains a prerelease: those checks do not certify marketplace
 acceptance or the elicitation UI of every proprietary client.
